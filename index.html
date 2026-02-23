@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0029)https://retrohue.lovable.app/ -->
-<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RetroGames HueHue - A melhor plataforma de jogos retrô online. Jogue Arcade, Nintendo, Sega, PlayStation e mais diretamente no navegador!">
     <meta name="keywords" content="retro games, emulator, arcade, nintendo, sega, playstation, online games, emulatorjs">
@@ -9,273 +9,583 @@
     <title>RetroGames HueHue</title>
     <meta name="author" content="Junior Games">
     <link rel="icon" href="https://retrohue.lovable.app/favicon.png" type="image/png">
-
     <meta property="og:title" content="RetroGames HueHue">
     <meta property="og:description" content="A melhor plataforma de jogos retrô online. Jogue onde estiver no seu dispositivo pelo Navegador de Internet!">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/favicon.png">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@juniorgameslives">
     <meta name="twitter:image" content="/favicon.png">
-    <script type="module" crossorigin="" src="./RetroGames HueHue_files/index-dhqMReNW.js.download"></script>
-    <link rel="stylesheet" crossorigin="" href="./RetroGames HueHue_files/index-CfKE9XE6.css">
-  
-<style>
-	@font-face {
-		font-family: 'CameraPlainVariable';
-		src: url('https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2') format('woff2');
-		font-weight: 100 900;
-		font-style: normal;
-		font-display: swap;
-	}
+    
+    <!-- Estilos principais -->
+    <link rel="stylesheet" href="./RetroGames HueHue_files/index-CfKE9XE6.css">
+    
+    <style>
+        /* Estilos para o badge do Lovable (mantido original) */
+        @font-face {
+            font-family: 'CameraPlainVariable';
+            src: url('https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2') format('woff2');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
 
-	#lovable-badge {
-		--badge-bg: #1b1b1b;
-		--badge-text: #c5c1b9;
-		--badge-text-hover: #dcdad5;
-		--badge-radius: 6px;
-		--badge-padding: 8px;
-		--badge-gap: 6px;
-		--badge-shadow: 
-			0 0 0 1px rgba(0, 0, 0, 0.88),
-			0 1px 0 0 rgba(0, 0, 0, 0.04),
-			0 2px 2px -1px rgba(0, 0, 0, 0.08),
-			0 4px 4px -2px rgba(0, 0, 0, 0.08),
-			0 8px 8px -4px rgba(0, 0, 0, 0.08),
-			0 16px 16px -8px rgba(0, 0, 0, 0.08);
-		--badge-transition-duration: 0.2s;
-		--badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
-		--focus-color: #575ECF;
-		--focus-offset: 2px;
-		--focus-width: 2px;
-		
-		position: fixed;
-		bottom: 12px;
-		right: 12px;
-		height: 24px;
-		display: flex;
-		align-items: center;
-		z-index: 1000000;
-		background-color: var(--badge-bg);
-		color: var(--badge-text);
-		border-radius: var(--badge-radius);
-		box-shadow: var(--badge-shadow);
-		font-size: 12px;
-		font-family: CameraPlainVariable, "CameraPlainVariable Fallback", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-		font-weight: 400 !important;
-		text-transform: none !important;
-		font-feature-settings: normal !important;
-		transform: translateZ(0);
-		will-change: transform, opacity;
-	}
+        #lovable-badge {
+            --badge-bg: #1b1b1b;
+            --badge-text: #c5c1b9;
+            --badge-text-hover: #dcdad5;
+            --badge-radius: 6px;
+            --badge-padding: 8px;
+            --badge-gap: 6px;
+            --badge-shadow: 0 0 0 1px rgba(0, 0, 0, 0.88), 0 1px 0 0 rgba(0, 0, 0, 0.04), 0 2px 2px -1px rgba(0, 0, 0, 0.08), 0 4px 4px -2px rgba(0, 0, 0, 0.08), 0 8px 8px -4px rgba(0, 0, 0, 0.08), 0 16px 16px -8px rgba(0, 0, 0, 0.08);
+            --badge-transition-duration: 0.2s;
+            --badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
+            --focus-color: #575ECF;
+            --focus-offset: 2px;
+            --focus-width: 2px;
+            position: fixed;
+            bottom: 12px;
+            right: 12px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            z-index: 1000000;
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            border-radius: var(--badge-radius);
+            box-shadow: var(--badge-shadow);
+            font-size: 12px;
+            font-family: CameraPlainVariable, "CameraPlainVariable Fallback", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: 400 !important;
+            text-transform: none !important;
+            font-feature-settings: normal !important;
+            transform: translateZ(0);
+            will-change: transform, opacity;
+        }
 
-	#lovable-badge-cta {
-		display: flex;
-		align-items: center;
-		gap: var(--badge-gap);
-		padding: 0 var(--badge-padding);
-		height: 100%;
-		color: inherit;
-		text-decoration: none;
-		white-space: nowrap;
-		border-radius: var(--badge-radius) 0 0 var(--badge-radius);
-		transition: 
-			background-color var(--badge-transition-duration) ease,
-			color var(--badge-transition-duration) ease,
-			transform 0.1s ease;
-	}
+        #lovable-badge-cta {
+            display: flex;
+            align-items: center;
+            gap: var(--badge-gap);
+            padding: 0 var(--badge-padding);
+            height: 100%;
+            color: inherit;
+            text-decoration: none;
+            white-space: nowrap;
+            border-radius: var(--badge-radius) 0 0 var(--badge-radius);
+            transition: background-color var(--badge-transition-duration) ease, color var(--badge-transition-duration) ease, transform 0.1s ease;
+        }
 
-	#lovable-badge-cta:hover {
-		background: rgba(255, 255, 255, 0.04);
-		color: var(--badge-text-hover);
-	}
+        #lovable-badge-cta:hover {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--badge-text-hover);
+        }
 
-	#lovable-badge-cta:active {
-		transform: scale(0.98);
-	}
+        #lovable-badge-cta:active { transform: scale(0.98); }
+        #lovable-badge-cta:focus { outline: none; }
+        #lovable-badge-cta:focus-visible {
+            outline: var(--focus-width) solid var(--focus-color);
+            outline-offset: var(--focus-offset);
+            z-index: 1;
+        }
 
-	#lovable-badge-cta:focus {
-		outline: none;
-	}
+        #lovable-badge-text { line-height: 1; }
 
-	#lovable-badge-cta:focus-visible {
-		outline: var(--focus-width) solid var(--focus-color);
-		outline-offset: var(--focus-offset);
-		z-index: 1;
-	}
+        #lovable-badge-divider {
+            width: 1px;
+            height: 24px;
+            background-color: rgba(255, 255, 255, 0.04);
+            flex-shrink: 0;
+        }
 
-	#lovable-badge-text {
-		line-height: 1;
-	}
+        #lovable-badge-close {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            min-height: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
+            flex-shrink: 0;
+            transition: background-color var(--badge-transition-duration) ease, transform 0.1s ease;
+        }
 
-	#lovable-badge-divider {
-		width: 1px;
-		height: 24px;
-		background-color: rgba(255, 255, 255, 0.04);
-		flex-shrink: 0;
-	}
+        #lovable-badge-close:hover { background: rgba(255, 255, 255, 0.04); }
+        #lovable-badge-close:active { transform: scale(0.92); }
+        #lovable-badge-close:focus { outline: none; }
+        #lovable-badge-close:focus-visible {
+            outline: var(--focus-width) solid var(--focus-color);
+            outline-offset: calc(var(--focus-offset) * -1);
+            z-index: 1;
+        }
 
-	#lovable-badge-close {
-		width: 24px;
-		height: 24px;
-		min-width: 24px;
-		min-height: 24px;
-		cursor: pointer;
-		background: none;
-		border: none;
-		padding: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
-		flex-shrink: 0;
-		transition: 
-			background-color var(--badge-transition-duration) ease,
-			transform 0.1s ease;
-	}
+        #lovable-badge-close svg path {
+            fill: var(--badge-text);
+            transition: fill var(--badge-transition-duration) ease;
+        }
 
-	#lovable-badge-close:hover {
-		background: rgba(255, 255, 255, 0.04);
-	}
+        #lovable-badge-close:hover svg path { fill: var(--badge-text-hover); }
 
-	#lovable-badge-close:active {
-		transform: scale(0.92);
-	}
+        @media (prefers-reduced-motion: reduce) {
+            #lovable-badge-cta, #lovable-badge-close, #lovable-badge-close svg path {
+                transition: none;
+            }
+            #lovable-badge-cta:active, #lovable-badge-close:active { transform: none; }
+        }
 
-	#lovable-badge-close:focus {
-		outline: none;
-	}
+        @media (prefers-contrast: high) {
+            #lovable-badge {
+                --badge-bg: #000;
+                --badge-text: #fff;
+                --badge-text-hover: #fff;
+                border: 2px solid currentColor;
+            }
+            #lovable-badge-cta:focus-visible, #lovable-badge-close:focus-visible {
+                outline-width: 3px;
+            }
+        }
 
-	#lovable-badge-close:focus-visible {
-		outline: var(--focus-width) solid var(--focus-color);
-		outline-offset: calc(var(--focus-offset) * -1);
-		z-index: 1;
-	}
-
-	#lovable-badge-close svg path {
-		fill: var(--badge-text);
-		transition: fill var(--badge-transition-duration) ease;
-	}
-
-	#lovable-badge-close:hover svg path {
-		fill: var(--badge-text-hover);
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		#lovable-badge-cta,
-		#lovable-badge-close,
-		#lovable-badge-close svg path {
-			transition: none;
-		}
-		
-		#lovable-badge-cta:active,
-		#lovable-badge-close:active {
-			transform: none;
-		}
-	}
-
-	@media (prefers-contrast: high) {
-		#lovable-badge {
-			--badge-bg: #000;
-			--badge-text: #fff;
-			--badge-text-hover: #fff;
-			border: 2px solid currentColor;
-		}
-		
-		#lovable-badge-cta:focus-visible,
-		#lovable-badge-close:focus-visible {
-			outline-width: 3px;
-		}
-	}
-</style>
-<script defer="" src="./RetroGames HueHue_files/_flock.js.download" data-proxy-url="https://retrohue.lovable.app/~api/analytics"></script><style type="text/css" id="operaUserStyle"></style><style type="text/css">:where(html[dir="ltr"]),:where([data-sonner-toaster][dir="ltr"]){--toast-icon-margin-start: -3px;--toast-icon-margin-end: 4px;--toast-svg-margin-start: -1px;--toast-svg-margin-end: 0px;--toast-button-margin-start: auto;--toast-button-margin-end: 0;--toast-close-button-start: 0;--toast-close-button-end: unset;--toast-close-button-transform: translate(-35%, -35%)}:where(html[dir="rtl"]),:where([data-sonner-toaster][dir="rtl"]){--toast-icon-margin-start: 4px;--toast-icon-margin-end: -3px;--toast-svg-margin-start: 0px;--toast-svg-margin-end: -1px;--toast-button-margin-start: 0;--toast-button-margin-end: auto;--toast-close-button-start: unset;--toast-close-button-end: 0;--toast-close-button-transform: translate(35%, -35%)}:where([data-sonner-toaster]){position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--gray1: hsl(0, 0%, 99%);--gray2: hsl(0, 0%, 97.3%);--gray3: hsl(0, 0%, 95.1%);--gray4: hsl(0, 0%, 93%);--gray5: hsl(0, 0%, 90.9%);--gray6: hsl(0, 0%, 88.7%);--gray7: hsl(0, 0%, 85.8%);--gray8: hsl(0, 0%, 78%);--gray9: hsl(0, 0%, 56.1%);--gray10: hsl(0, 0%, 52.3%);--gray11: hsl(0, 0%, 43.5%);--gray12: hsl(0, 0%, 9%);--border-radius: 8px;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:none;z-index:999999999;transition:transform .4s ease}:where([data-sonner-toaster][data-lifted="true"]){transform:translateY(-10px)}@media (hover: none) and (pointer: coarse){:where([data-sonner-toaster][data-lifted="true"]){transform:none}}:where([data-sonner-toaster][data-x-position="right"]){right:var(--offset-right)}:where([data-sonner-toaster][data-x-position="left"]){left:var(--offset-left)}:where([data-sonner-toaster][data-x-position="center"]){left:50%;transform:translate(-50%)}:where([data-sonner-toaster][data-y-position="top"]){top:var(--offset-top)}:where([data-sonner-toaster][data-y-position="bottom"]){bottom:var(--offset-bottom)}:where([data-sonner-toast]){--y: translateY(100%);--lift-amount: calc(var(--lift) * var(--gap));z-index:var(--z-index);position:absolute;opacity:0;transform:var(--y);filter:blur(0);touch-action:none;transition:transform .4s,opacity .4s,height .4s,box-shadow .2s;box-sizing:border-box;outline:none;overflow-wrap:anywhere}:where([data-sonner-toast][data-styled="true"]){padding:16px;background:var(--normal-bg);border:1px solid var(--normal-border);color:var(--normal-text);border-radius:var(--border-radius);box-shadow:0 4px 12px #0000001a;width:var(--width);font-size:13px;display:flex;align-items:center;gap:6px}:where([data-sonner-toast]:focus-visible){box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast][data-y-position="top"]){top:0;--y: translateY(-100%);--lift: 1;--lift-amount: calc(1 * var(--gap))}:where([data-sonner-toast][data-y-position="bottom"]){bottom:0;--y: translateY(100%);--lift: -1;--lift-amount: calc(var(--lift) * var(--gap))}:where([data-sonner-toast]) :where([data-description]){font-weight:400;line-height:1.4;color:inherit}:where([data-sonner-toast]) :where([data-title]){font-weight:500;line-height:1.5;color:inherit}:where([data-sonner-toast]) :where([data-icon]){display:flex;height:16px;width:16px;position:relative;justify-content:flex-start;align-items:center;flex-shrink:0;margin-left:var(--toast-icon-margin-start);margin-right:var(--toast-icon-margin-end)}:where([data-sonner-toast][data-promise="true"]) :where([data-icon])>svg{opacity:0;transform:scale(.8);transform-origin:center;animation:sonner-fade-in .3s ease forwards}:where([data-sonner-toast]) :where([data-icon])>*{flex-shrink:0}:where([data-sonner-toast]) :where([data-icon]) svg{margin-left:var(--toast-svg-margin-start);margin-right:var(--toast-svg-margin-end)}:where([data-sonner-toast]) :where([data-content]){display:flex;flex-direction:column;gap:2px}[data-sonner-toast][data-styled=true] [data-button]{border-radius:4px;padding-left:8px;padding-right:8px;height:24px;font-size:12px;color:var(--normal-bg);background:var(--normal-text);margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end);border:none;cursor:pointer;outline:none;display:flex;align-items:center;flex-shrink:0;transition:opacity .4s,box-shadow .2s}:where([data-sonner-toast]) :where([data-button]):focus-visible{box-shadow:0 0 0 2px #0006}:where([data-sonner-toast]) :where([data-button]):first-of-type{margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end)}:where([data-sonner-toast]) :where([data-cancel]){color:var(--normal-text);background:rgba(0,0,0,.08)}:where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]){background:rgba(255,255,255,.3)}:where([data-sonner-toast]) :where([data-close-button]){position:absolute;left:var(--toast-close-button-start);right:var(--toast-close-button-end);top:0;height:20px;width:20px;display:flex;justify-content:center;align-items:center;padding:0;color:var(--gray12);border:1px solid var(--gray4);transform:var(--toast-close-button-transform);border-radius:50%;cursor:pointer;z-index:1;transition:opacity .1s,background .2s,border-color .2s}[data-sonner-toast] [data-close-button]{background:var(--gray1)}:where([data-sonner-toast]) :where([data-close-button]):focus-visible{box-shadow:0 4px 12px #0000001a,0 0 0 2px #0003}:where([data-sonner-toast]) :where([data-disabled="true"]){cursor:not-allowed}:where([data-sonner-toast]):hover :where([data-close-button]):hover{background:var(--gray2);border-color:var(--gray5)}:where([data-sonner-toast][data-swiping="true"]):before{content:"";position:absolute;left:-50%;right:-50%;height:100%;z-index:-1}:where([data-sonner-toast][data-y-position="top"][data-swiping="true"]):before{bottom:50%;transform:scaleY(3) translateY(50%)}:where([data-sonner-toast][data-y-position="bottom"][data-swiping="true"]):before{top:50%;transform:scaleY(3) translateY(-50%)}:where([data-sonner-toast][data-swiping="false"][data-removed="true"]):before{content:"";position:absolute;inset:0;transform:scaleY(2)}:where([data-sonner-toast]):after{content:"";position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}:where([data-sonner-toast][data-mounted="true"]){--y: translateY(0);opacity:1}:where([data-sonner-toast][data-expanded="false"][data-front="false"]){--scale: var(--toasts-before) * .05 + 1;--y: translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));height:var(--front-toast-height)}:where([data-sonner-toast])>*{transition:opacity .4s}:where([data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"])>*{opacity:0}:where([data-sonner-toast][data-visible="false"]){opacity:0;pointer-events:none}:where([data-sonner-toast][data-mounted="true"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset)));height:var(--initial-height)}:where([data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]){--y: translateY(calc(var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]){--y: translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));opacity:0}:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]){--y: translateY(40%);opacity:0;transition:transform .5s,opacity .2s}:where([data-sonner-toast][data-removed="true"][data-front="false"]):before{height:calc(var(--initial-height) + 20%)}[data-sonner-toast][data-swiping=true]{transform:var(--y) translateY(var(--swipe-amount-y, 0px)) translate(var(--swipe-amount-x, 0px));transition:none}[data-sonner-toast][data-swiped=true]{user-select:none}[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],[data-sonner-toast][data-swipe-out=true][data-y-position=top]{animation-duration:.2s;animation-timing-function:ease-out;animation-fill-mode:forwards}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=left]{animation-name:swipe-out-left}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=right]{animation-name:swipe-out-right}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=up]{animation-name:swipe-out-up}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=down]{animation-name:swipe-out-down}@keyframes swipe-out-left{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) - 100%));opacity:0}}@keyframes swipe-out-right{0%{transform:var(--y) translate(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translate(calc(var(--swipe-amount-x) + 100%));opacity:0}}@keyframes swipe-out-up{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) - 100%));opacity:0}}@keyframes swipe-out-down{0%{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) + 100%));opacity:0}}@media (max-width: 600px){[data-sonner-toaster]{position:fixed;right:var(--mobile-offset-right);left:var(--mobile-offset-left);width:100%}[data-sonner-toaster][dir=rtl]{left:calc(var(--mobile-offset-left) * -1)}[data-sonner-toaster] [data-sonner-toast]{left:0;right:0;width:calc(100% - var(--mobile-offset-left) * 2)}[data-sonner-toaster][data-x-position=left]{left:var(--mobile-offset-left)}[data-sonner-toaster][data-y-position=bottom]{bottom:var(--mobile-offset-bottom)}[data-sonner-toaster][data-y-position=top]{top:var(--mobile-offset-top)}[data-sonner-toaster][data-x-position=center]{left:var(--mobile-offset-left);right:var(--mobile-offset-right);transform:none}}[data-sonner-toaster][data-theme=light]{--normal-bg: #fff;--normal-border: var(--gray4);--normal-text: var(--gray12);--success-bg: hsl(143, 85%, 96%);--success-border: hsl(145, 92%, 91%);--success-text: hsl(140, 100%, 27%);--info-bg: hsl(208, 100%, 97%);--info-border: hsl(221, 91%, 91%);--info-text: hsl(210, 92%, 45%);--warning-bg: hsl(49, 100%, 97%);--warning-border: hsl(49, 91%, 91%);--warning-text: hsl(31, 92%, 45%);--error-bg: hsl(359, 100%, 97%);--error-border: hsl(359, 100%, 94%);--error-text: hsl(360, 100%, 45%)}[data-sonner-toaster][data-theme=light] [data-sonner-toast][data-invert=true]{--normal-bg: #000;--normal-border: hsl(0, 0%, 20%);--normal-text: var(--gray1)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast][data-invert=true]{--normal-bg: #fff;--normal-border: var(--gray3);--normal-text: var(--gray12)}[data-sonner-toaster][data-theme=dark]{--normal-bg: #000;--normal-bg-hover: hsl(0, 0%, 12%);--normal-border: hsl(0, 0%, 20%);--normal-border-hover: hsl(0, 0%, 25%);--normal-text: var(--gray1);--success-bg: hsl(150, 100%, 6%);--success-border: hsl(147, 100%, 12%);--success-text: hsl(150, 86%, 65%);--info-bg: hsl(215, 100%, 6%);--info-border: hsl(223, 100%, 12%);--info-text: hsl(216, 87%, 65%);--warning-bg: hsl(64, 100%, 6%);--warning-border: hsl(60, 100%, 12%);--warning-text: hsl(46, 87%, 65%);--error-bg: hsl(358, 76%, 10%);--error-border: hsl(357, 89%, 16%);--error-text: hsl(358, 100%, 81%)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]{background:var(--normal-bg);border-color:var(--normal-border);color:var(--normal-text)}[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]:hover{background:var(--normal-bg-hover);border-color:var(--normal-border-hover)}[data-rich-colors=true][data-sonner-toast][data-type=success],[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=info],[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning],[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=error],[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}.sonner-loading-wrapper{--size: 16px;height:var(--size);width:var(--size);position:absolute;inset:0;z-index:10}.sonner-loading-wrapper[data-visible=false]{transform-origin:center;animation:sonner-fade-out .2s ease forwards}.sonner-spinner{position:relative;top:50%;left:50%;height:var(--size);width:var(--size)}.sonner-loading-bar{animation:sonner-spin 1.2s linear infinite;background:var(--gray11);border-radius:6px;height:8%;left:-10%;position:absolute;top:-3.9%;width:24%}.sonner-loading-bar:nth-child(1){animation-delay:-1.2s;transform:rotate(.0001deg) translate(146%)}.sonner-loading-bar:nth-child(2){animation-delay:-1.1s;transform:rotate(30deg) translate(146%)}.sonner-loading-bar:nth-child(3){animation-delay:-1s;transform:rotate(60deg) translate(146%)}.sonner-loading-bar:nth-child(4){animation-delay:-.9s;transform:rotate(90deg) translate(146%)}.sonner-loading-bar:nth-child(5){animation-delay:-.8s;transform:rotate(120deg) translate(146%)}.sonner-loading-bar:nth-child(6){animation-delay:-.7s;transform:rotate(150deg) translate(146%)}.sonner-loading-bar:nth-child(7){animation-delay:-.6s;transform:rotate(180deg) translate(146%)}.sonner-loading-bar:nth-child(8){animation-delay:-.5s;transform:rotate(210deg) translate(146%)}.sonner-loading-bar:nth-child(9){animation-delay:-.4s;transform:rotate(240deg) translate(146%)}.sonner-loading-bar:nth-child(10){animation-delay:-.3s;transform:rotate(270deg) translate(146%)}.sonner-loading-bar:nth-child(11){animation-delay:-.2s;transform:rotate(300deg) translate(146%)}.sonner-loading-bar:nth-child(12){animation-delay:-.1s;transform:rotate(330deg) translate(146%)}@keyframes sonner-fade-in{0%{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}@keyframes sonner-fade-out{0%{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.8)}}@keyframes sonner-spin{0%{opacity:1}to{opacity:.15}}@media (prefers-reduced-motion){[data-sonner-toast],[data-sonner-toast]>*,.sonner-loading-bar{transition:none!important;animation:none!important}}.sonner-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transform-origin:center;transition:opacity .2s,transform .2s}.sonner-loader[data-visible=false]{opacity:0;transform:scale(.8) translate(-50%,-50%)}
-</style>
-
-<style>
-/* Garantir que botões ativos não tenham efeitos hover */
-.category-btn.active-category:hover,
-.category-btn.bg-primary:hover {
-    background-color: hsl(142.1 70.6% 45.3%) !important; /* mesma cor primary */
-    border-color: hsl(142.1 70.6% 45.3%) !important;
-    color: hsl(0 0% 100%) !important;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 15px rgba(34, 197, 94, 0.5) !important;
-}
-</style>
-
+        /* Garantir que botões ativos mantenham a cor mesmo com hover */
+        .category-btn.active-category:hover,
+        .category-btn.bg-primary:hover {
+            background-color: hsl(142.1 70.6% 45.3%) !important;
+            border-color: hsl(142.1 70.6% 45.3%) !important;
+            color: hsl(0 0% 100%) !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 15px rgba(34, 197, 94, 0.5) !important;
+        }
+    </style>
+    
+    <!-- Script do analytics (mantido) -->
+    <script defer src="./RetroGames HueHue_files/_flock.js.download" data-proxy-url="https://retrohue.lovable.app/~api/analytics"></script>
 </head>
 
-  <body>
-    <div id="root"><div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;"><ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol></div><section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section><div class="min-h-screen bg-background relative scanlines"><section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-8"><div class="absolute inset-0 bg-grid opacity-30"></div><div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background"></div><div class="absolute left-4 xl:left-12 top-20 hidden lg:block"><img src="./RetroGames HueHue_files/huehue-icon-D5xXBnqZ.png" alt="HueHue" class="w-52 xl:w-64 animate-float"></div><div class="absolute right-4 xl:right-12 top-20 hidden lg:block"><img src="./RetroGames HueHue_files/jr-avatar-iS158lOn.png" alt="Junior Games" class="w-52 xl:w-64 animate-float" style="animation-delay: 1.5s;"></div><div class="relative z-10 container mx-auto px-4 text-center"><div class="max-w-4xl mx-auto"><h1 class="font-arcade text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-glow animate-fade-in" style="animation-delay: 0.2s;"><span class="text-foreground">RETRO</span><span class="text-foreground">&nbsp;GAMES</span></h1><h2 class="font-pixel text-xl md:text-3xl mb-8 animate-fade-in tracking-[0.3em]" style="animation-delay: 0.3s;"><span class="text-blue-600">H</span><span class="text-neon-yellow">u</span><span class="text-primary">e</span><span class="text-blue-600">H</span><span class="text-neon-yellow">u</span><span class="text-primary">e</span></h2><div class="mb-8 animate-fade-in flex flex-col items-center" style="animation-delay: 0.35s;"><p class="text-muted-foreground text-sm md:text-base mb-3">Contribua no PIX se quiser! Muito obrigado!</p><img src="./RetroGames HueHue_files/pix-qrcode-BU_2v3IA.jpeg" alt="QR Code PIX" class="w-32 h-32 md:w-40 md:h-40 rounded-lg border-2 border-primary/30"><p class="text-primary font-mono text-xs md:text-sm mt-2">jrgameslives@gmail.com</p></div><p class="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in" style="animation-delay: 0.4s;">Deguste o melhor dos jogos retrô diretamente no seu navegador de internet.</p><div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style="animation-delay: 0.5s;"><a href="https://www.youtube.com/@juniorgameslives" target="_blank" rel="noopener noreferrer" class="btn-arcade px-8 py-4 rounded-xl flex items-center gap-3 text-base"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube w-5 h-5"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>Junior Games</a><a href="https://rahuehue-online.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn-arcade px-8 py-4 rounded-xl flex items-center gap-3 text-base"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2 w-5 h-5"><line x1="6" x2="10" y1="11" y2="11"></line><line x1="8" x2="8" y1="9" y2="13"></line><line x1="15" x2="15.01" y1="12" y2="12"></line><line x1="18" x2="18.01" y1="10" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path></svg>RAHueHue Online</a><a href="https://play.webrcade.com/?feed=https://tinyurl.com/retrohue" target="_blank" rel="noopener noreferrer" class="btn-arcade px-8 py-4 rounded-xl flex items-center gap-3 text-base"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2 w-5 h-5"><line x1="6" x2="10" y1="11" y2="11"></line><line x1="8" x2="8" y1="9" y2="13"></line><line x1="15" x2="15.01" y1="12" y2="12"></line><line x1="18" x2="18.01" y1="10" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path></svg>WebRcade HueHue</a></div><div class="flex flex-wrap justify-center gap-8 md:gap-16 mt-12 animate-fade-in" style="animation-delay: 0.6s;"><div class="text-center"><div class="font-arcade text-2xl md:text-3xl text-primary text-glow-sm">13+</div><div class="text-sm text-muted-foreground mt-1">Plataformas</div></div><div class="text-center"><div class="font-arcade text-2xl md:text-3xl text-neon-cyan text-glow-sm">5000+</div><div class="text-sm text-muted-foreground mt-1">Jogos</div></div><div class="text-center"><div class="font-arcade text-2xl md:text-3xl text-neon-pink text-glow-sm">100%</div><div class="text-sm text-muted-foreground mt-1">Grátis</div></div></div></div></div><div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div></section><main class="container mx-auto px-4 py-8 relative z-10"><div class="text-center mb-8"><h2 class="font-arcade text-2xl md:text-3xl text-foreground mb-2"><span class="text-primary">Escolha</span> seu Console</h2><p class="text-muted-foreground">Navegue pelas plataformas e encontre seus jogos favoritos.</p></div><div class="mb-8"><div class="overflow-x-auto pb-4 scrollbar-hide"><div class="flex gap-2 md:gap-3 min-w-max px-4 md:px-0 justify-center" id="category-filters">
-  <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-primary text-primary-foreground border-primary shadow-neon category-btn active-category" data-category="todos" id="btn-todos">
-    <span class="text-lg">🎮</span><span>Todos</span>
-  </button>
-  <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="arcade" id="btn-arcade">
-    <span class="text-lg">🕹️</span><span>Arcade</span>
-  </button>
-  <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="nintendo" id="btn-nintendo">
-    <span class="text-lg">🍄</span><span>Nintendo</span>
-  </button>
-  <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="sega" id="btn-sega">
-    <span class="text-lg">💎</span><span>Sega</span>
-  </button>
-  <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="atari" id="btn-atari">
-    <span class="text-lg">👾</span><span>Atari</span>
-  </button>
-  <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="sony" id="btn-sony">
-    <span class="text-lg">🎯</span><span>Sony</span>
-  </button>
-  <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="portateis" id="btn-portateis">
-    <span class="text-lg">📱</span><span>Portáteis</span>
-  </button>
-</div></div></div><div class="flex flex-wrap justify-center gap-4 md:gap-6" id="games-container"><a href="https://rahuehue-online.pages.dev/lists/Capcom.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="arcade" style="animation-delay: 0s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/Capcom.png" alt="Arcade - Capcom" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Arcade - Capcom</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">arcade</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/Konami.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="arcade" style="animation-delay: 0.05s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/Konami.png" alt="Arcade - Konami" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Arcade - Konami</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">arcade</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/SNK%20-%20NeoGeo.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="arcade" style="animation-delay: 0.1s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/SNK - NeoGeo.png" alt="Arcade - SNK NeoGeo" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Arcade - SNK NeoGeo</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">arcade</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/Atari%202600.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="atari" style="animation-delay: 0.15s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/Atari 2600.png" alt="Atari 2600" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Atari 2600</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">atari</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/GameBoy.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="portateis" style="animation-delay: 0.2s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/GameBoy.png" alt="GameBoy" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">GameBoy</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">Portátil</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/GameBoy%20Color.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="portateis" style="animation-delay: 0.25s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/GameBoy Color.png" alt="GameBoy Color" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">GameBoy Color</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">Portátil</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/GameBoy%20Advance.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="portateis" style="animation-delay: 0.3s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/GameBoy Advance.png" alt="GameBoy Advance" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">GameBoy Advance</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">Portátil</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/Mega%20Drive.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="sega" style="animation-delay: 0.35s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/Mega Drive.png" alt="Mega Drive" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Mega Drive</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">sega</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/Master%20System.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="sega" style="animation-delay: 0.4s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/Master System.png" alt="Master System" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Master System</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">sega</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/Nintendo.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="nintendo" style="animation-delay: 0.45s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/Nintendo.png" alt="Nintendo (NES)" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Nintendo (NES)</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">nintendo</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/Super%20Nintendo.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="nintendo" style="animation-delay: 0.5s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/Super Nintendo.png" alt="Super Nintendo" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Super Nintendo</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">nintendo</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/Nintendo%2064.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="nintendo" style="animation-delay: 0.55s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/Nintendo 64.png" alt="Nintendo 64" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Nintendo 64</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">nintendo</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://rahuehue-online.pages.dev/lists/Playstation.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="sony" style="animation-delay: 0.6s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/Playstation.png" alt="PlayStation" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">PlayStation</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">sony</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a><a href="https://play.webrcade.com/?feed=https://tinyurl.com/retrohue" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="webrcade" style="animation-delay: 0.65s;"><div class="relative mb-4"><div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div><img src="./RetroGames HueHue_files/webrcade-huehue-icon-BASgqQxr.png" alt="WebRcade HueHue" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy"></div><h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">WebRcade HueHue</h3><span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">webrcade</span><div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity"><span class="text-xs font-medium">Ver jogos</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></a></div></main><div class="container mx-auto px-4 relative z-10"><div class="flex items-start gap-2 justify-center text-center py-4 px-3 rounded-md border border-neon-yellow/30 bg-neon-yellow/5"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-neon-yellow shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg><p class="text-xs text-neon-yellow">Os jogos e plataformas contidos nesta página podem ficar fora do ar sem aviso, trata-se de conteúdos públicos na internet, não contém servidor particular de armazenamento de roms e emuladores.</p></div></div><footer class="border-t border-border/50 mt-16"><div class="container mx-auto px-4 py-8"><div class="flex flex-col md:flex-row items-center justify-between gap-6"><div class="flex items-center gap-4"><img src="./RetroGames HueHue_files/retrogames-huehue-logo-C2fWGtr0.png" alt="RetroGames HueHue" class="w-12 h-12 object-contain"><div><h3 class="font-arcade text-sm text-primary">RetroGames HueHue</h3><p class="text-xs text-muted-foreground">Editado por Helton Junior.</p></div></div><a href="https://www.youtube.com/@juniorgameslives" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-muted-foreground hover:text-destructive transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube w-5 h-5 text-destructive"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg><span>Canal Junior Games</span></a></div><div class="mt-8 pt-6 border-t border-border/30 text-center"><p class="text-xs text-muted-foreground">© 2026 RetroGames HueHue. Jogue onde estiver no seu dispositivo pelo Navegador de Internet.</p></div></div></footer></div></div>
-
-<script>
-// Função para fazer os botões de categoria funcionarem
-document.addEventListener('DOMContentLoaded', function() {
-    // Selecionar todos os botões de categoria
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    // Selecionar todos os cards de jogos
-    const gameCards = document.querySelectorAll('.game-card');
-    
-    // Função para atualizar a classe ativa
-    function setActiveCategory(activeButton) {
-        categoryButtons.forEach(btn => {
-            // Remove todas as classes de ativo
-            btn.classList.remove('bg-primary', 'text-primary-foreground', 'border-primary', 'shadow-neon', 'active-category');
-            // Garante que todos tenham as classes base e hover
-            btn.classList.add('bg-card', 'border-border', 'text-foreground');
-        });
+<body>
+    <div id="root">
+        <!-- Notifications (estrutura mantida) -->
+        <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+            <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
+        </div>
+        <section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section>
         
-        // Adiciona as classes de ativo ao botão clicado
-        activeButton.classList.add('bg-primary', 'text-primary-foreground', 'border-primary', 'shadow-neon', 'active-category');
-        activeButton.classList.remove('bg-card', 'border-border', 'text-foreground');
-    }
-    
-    // Adicionar evento de clique a cada botão
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Atualiza a classe ativa
-            setActiveCategory(this);
-            
-            // Obter a categoria selecionada
-            const selectedCategory = this.getAttribute('data-category');
-            
-            // Filtrar os jogos
-            gameCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
+        <!-- Conteúdo principal -->
+        <div class="min-h-screen bg-background relative scanlines">
+            <!-- Hero Section -->
+            <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-8">
+                <div class="absolute inset-0 bg-grid opacity-30"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background"></div>
                 
-                if (selectedCategory === 'todos' || cardCategory === selectedCategory) {
-                    // Mostrar o card
-                    card.style.display = 'flex';
-                } else {
-                    // Esconder o card
-                    card.style.display = 'none';
-                }
+                <!-- Elementos decorativos -->
+                <div class="absolute left-4 xl:left-12 top-20 hidden lg:block">
+                    <img src="./RetroGames HueHue_files/huehue-icon-D5xXBnqZ.png" alt="HueHue" class="w-52 xl:w-64 animate-float">
+                </div>
+                <div class="absolute right-4 xl:right-12 top-20 hidden lg:block">
+                    <img src="./RetroGames HueHue_files/jr-avatar-iS158lOn.png" alt="Junior Games" class="w-52 xl:w-64 animate-float" style="animation-delay: 1.5s;">
+                </div>
+                
+                <!-- Conteúdo do hero -->
+                <div class="relative z-10 container mx-auto px-4 text-center">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="font-arcade text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-glow animate-fade-in" style="animation-delay: 0.2s;">
+                            <span class="text-foreground">RETRO</span><span class="text-foreground">&nbsp;GAMES</span>
+                        </h1>
+                        <h2 class="font-pixel text-xl md:text-3xl mb-8 animate-fade-in tracking-[0.3em]" style="animation-delay: 0.3s;">
+                            <span class="text-blue-600">H</span><span class="text-neon-yellow">u</span><span class="text-primary">e</span><span class="text-blue-600">H</span><span class="text-neon-yellow">u</span><span class="text-primary">e</span>
+                        </h2>
+                        
+                        <!-- QR Code PIX -->
+                        <div class="mb-8 animate-fade-in flex flex-col items-center" style="animation-delay: 0.35s;">
+                            <p class="text-muted-foreground text-sm md:text-base mb-3">Contribua no PIX se quiser! Muito obrigado!</p>
+                            <img src="./RetroGames HueHue_files/pix-qrcode-BU_2v3IA.jpeg" alt="QR Code PIX" class="w-32 h-32 md:w-40 md:h-40 rounded-lg border-2 border-primary/30">
+                            <p class="text-primary font-mono text-xs md:text-sm mt-2">jrgameslives@gmail.com</p>
+                        </div>
+                        
+                        <p class="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in" style="animation-delay: 0.4s;">
+                            Deguste o melhor dos jogos retrô diretamente no seu navegador de internet.
+                        </p>
+                        
+                        <!-- Botões de ação -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style="animation-delay: 0.5s;">
+                            <a href="https://www.youtube.com/@juniorgameslives" target="_blank" rel="noopener noreferrer" class="btn-arcade px-8 py-4 rounded-xl flex items-center gap-3 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube w-5 h-5">
+                                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                                    <path d="m10 15 5-3-5-3z"></path>
+                                </svg>
+                                Junior Games
+                            </a>
+                            <a href="https://rahuehue-online.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn-arcade px-8 py-4 rounded-xl flex items-center gap-3 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2 w-5 h-5">
+                                    <line x1="6" x2="10" y1="11" y2="11"></line><line x1="8" x2="8" y1="9" y2="13"></line>
+                                    <line x1="15" x2="15.01" y1="12" y2="12"></line><line x1="18" x2="18.01" y1="10" y2="10"></line>
+                                    <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path>
+                                </svg>
+                                RAHueHue Online
+                            </a>
+                            <a href="https://play.webrcade.com/?feed=https://tinyurl.com/retrohue" target="_blank" rel="noopener noreferrer" class="btn-arcade px-8 py-4 rounded-xl flex items-center gap-3 text-base">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2 w-5 h-5">
+                                    <line x1="6" x2="10" y1="11" y2="11"></line><line x1="8" x2="8" y1="9" y2="13"></line>
+                                    <line x1="15" x2="15.01" y1="12" y2="12"></line><line x1="18" x2="18.01" y1="10" y2="10"></line>
+                                    <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path>
+                                </svg>
+                                WebRcade HueHue
+                            </a>
+                        </div>
+                        
+                        <!-- Estatísticas -->
+                        <div class="flex flex-wrap justify-center gap-8 md:gap-16 mt-12 animate-fade-in" style="animation-delay: 0.6s;">
+                            <div class="text-center">
+                                <div class="font-arcade text-2xl md:text-3xl text-primary text-glow-sm">13+</div>
+                                <div class="text-sm text-muted-foreground mt-1">Plataformas</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-arcade text-2xl md:text-3xl text-neon-cyan text-glow-sm">5000+</div>
+                                <div class="text-sm text-muted-foreground mt-1">Jogos</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-arcade text-2xl md:text-3xl text-neon-pink text-glow-sm">100%</div>
+                                <div class="text-sm text-muted-foreground mt-1">Grátis</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
+            </section>
+
+            <!-- Main content com os jogos -->
+            <main class="container mx-auto px-4 py-8 relative z-10">
+                <div class="text-center mb-8">
+                    <h2 class="font-arcade text-2xl md:text-3xl text-foreground mb-2"><span class="text-primary">Escolha</span> seu Console</h2>
+                    <p class="text-muted-foreground">Navegue pelas plataformas e encontre seus jogos favoritos.</p>
+                </div>
+
+                <!-- Filtros de categoria -->
+                <div class="mb-8">
+                    <div class="overflow-x-auto pb-4 scrollbar-hide">
+                        <div class="flex gap-2 md:gap-3 min-w-max px-4 md:px-0 justify-center" id="category-filters">
+                            <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-primary text-primary-foreground border-primary shadow-neon category-btn active-category" data-category="todos" id="btn-todos">
+                                <span class="text-lg">🎮</span><span>Todos</span>
+                            </button>
+                            <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="arcade" id="btn-arcade">
+                                <span class="text-lg">🕹️</span><span>Arcade</span>
+                            </button>
+                            <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="nintendo" id="btn-nintendo">
+                                <span class="text-lg">🍄</span><span>Nintendo</span>
+                            </button>
+                            <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="sega" id="btn-sega">
+                                <span class="text-lg">💎</span><span>Sega</span>
+                            </button>
+                            <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="atari" id="btn-atari">
+                                <span class="text-lg">👾</span><span>Atari</span>
+                            </button>
+                            <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="sony" id="btn-sony">
+                                <span class="text-lg">🎯</span><span>Sony</span>
+                            </button>
+                            <button class="flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border whitespace-nowrap bg-card border-border hover:border-primary/50 hover:bg-card/80 hover:shadow-[0_0_15px_rgba(0,255,100,0.3)] hover:text-primary category-btn" data-category="portateis" id="btn-portateis">
+                                <span class="text-lg">📱</span><span>Portáteis</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards de jogos -->
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6" id="games-container">
+                    <!-- Capcom -->
+                    <a href="https://rahuehue-online.pages.dev/lists/Capcom.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="arcade" style="animation-delay: 0s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/Capcom.png" alt="Arcade - Capcom" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Arcade - Capcom</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">arcade</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- Konami -->
+                    <a href="https://rahuehue-online.pages.dev/lists/Konami.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="arcade" style="animation-delay: 0.05s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/Konami.png" alt="Arcade - Konami" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Arcade - Konami</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">arcade</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- SNK NeoGeo -->
+                    <a href="https://rahuehue-online.pages.dev/lists/SNK%20-%20NeoGeo.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="arcade" style="animation-delay: 0.1s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/SNK - NeoGeo.png" alt="Arcade - SNK NeoGeo" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Arcade - SNK NeoGeo</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">arcade</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- Atari 2600 -->
+                    <a href="https://rahuehue-online.pages.dev/lists/Atari%202600.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="atari" style="animation-delay: 0.15s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/Atari 2600.png" alt="Atari 2600" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Atari 2600</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">atari</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- GameBoy -->
+                    <a href="https://rahuehue-online.pages.dev/lists/GameBoy.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="portateis" style="animation-delay: 0.2s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/GameBoy.png" alt="GameBoy" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">GameBoy</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">Portátil</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- GameBoy Color -->
+                    <a href="https://rahuehue-online.pages.dev/lists/GameBoy%20Color.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="portateis" style="animation-delay: 0.25s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/GameBoy Color.png" alt="GameBoy Color" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">GameBoy Color</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">Portátil</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- GameBoy Advance -->
+                    <a href="https://rahuehue-online.pages.dev/lists/GameBoy%20Advance.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="portateis" style="animation-delay: 0.3s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/GameBoy Advance.png" alt="GameBoy Advance" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">GameBoy Advance</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">Portátil</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- Mega Drive -->
+                    <a href="https://rahuehue-online.pages.dev/lists/Mega%20Drive.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="sega" style="animation-delay: 0.35s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/Mega Drive.png" alt="Mega Drive" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Mega Drive</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">sega</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- Master System -->
+                    <a href="https://rahuehue-online.pages.dev/lists/Master%20System.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="sega" style="animation-delay: 0.4s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/Master System.png" alt="Master System" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Master System</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">sega</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- Nintendo NES -->
+                    <a href="https://rahuehue-online.pages.dev/lists/Nintendo.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="nintendo" style="animation-delay: 0.45s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/Nintendo.png" alt="Nintendo (NES)" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Nintendo (NES)</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">nintendo</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- Super Nintendo -->
+                    <a href="https://rahuehue-online.pages.dev/lists/Super%20Nintendo.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="nintendo" style="animation-delay: 0.5s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/Super Nintendo.png" alt="Super Nintendo" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Super Nintendo</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">nintendo</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- Nintendo 64 -->
+                    <a href="https://rahuehue-online.pages.dev/lists/Nintendo%2064.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="nintendo" style="animation-delay: 0.55s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/Nintendo 64.png" alt="Nintendo 64" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">Nintendo 64</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">nintendo</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- PlayStation -->
+                    <a href="https://rahuehue-online.pages.dev/lists/Playstation.html" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="sony" style="animation-delay: 0.6s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/Playstation.png" alt="PlayStation" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">PlayStation</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">sony</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <!-- WebRcade HueHue -->
+                    <a href="https://play.webrcade.com/?feed=https://tinyurl.com/retrohue" class="group card-retro rounded-xl p-4 md:p-6 flex flex-col items-center text-center cursor-pointer animate-fade-in w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.5rem)] md:w-[calc(25%-1rem)] lg:w-[calc(20%-1rem)] xl:w-[calc(16.666%-1rem)] game-card" data-category="webrcade" style="animation-delay: 0.65s;">
+                        <div class="relative mb-4">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <img src="./RetroGames HueHue_files/webrcade-huehue-icon-BASgqQxr.png" alt="WebRcade HueHue" class="console-icon w-16 h-16 md:w-20 md:h-20 object-contain relative z-10" loading="lazy">
+                        </div>
+                        <h3 class="font-arcade text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors mb-2">WebRcade HueHue</h3>
+                        <span class="text-xs text-muted-foreground capitalize px-2 py-1 rounded-full bg-muted/50">webrcade</span>
+                        <div class="mt-4 flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-xs font-medium">Ver jogos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-3 h-3">
+                                <path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </main>
+
+            <!-- Aviso legal -->
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex items-start gap-2 justify-center text-center py-4 px-3 rounded-md border border-neon-yellow/30 bg-neon-yellow/5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-neon-yellow shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
+                        <path d="M12 9v4"></path>
+                        <path d="M12 17h.01"></path>
+                    </svg>
+                    <p class="text-xs text-neon-yellow">Os jogos e plataformas contidos nesta página podem ficar fora do ar sem aviso, trata-se de conteúdos públicos na internet, não contém servidor particular de armazenamento de roms e emuladores.</p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="border-t border-border/50 mt-16">
+                <div class="container mx-auto px-4 py-8">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div class="flex items-center gap-4">
+                            <img src="./RetroGames HueHue_files/retrogames-huehue-logo-C2fWGtr0.png" alt="RetroGames HueHue" class="w-12 h-12 object-contain">
+                            <div>
+                                <h3 class="font-arcade text-sm text-primary">RetroGames HueHue</h3>
+                                <p class="text-xs text-muted-foreground">Editado por Helton Junior.</p>
+                            </div>
+                        </div>
+                        <a href="https://www.youtube.com/@juniorgameslives" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-muted-foreground hover:text-destructive transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube w-5 h-5 text-destructive">
+                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                            <span>Canal Junior Games</span>
+                        </a>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-border/30 text-center">
+                        <p class="text-xs text-muted-foreground">© 2026 RetroGames HueHue. Jogue onde estiver no seu dispositivo pelo Navegador de Internet.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Sistema de filtro por categoria
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const gameCards = document.querySelectorAll('.game-card');
+            
+            function setActiveCategory(activeButton) {
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-primary-foreground', 'border-primary', 'shadow-neon', 'active-category');
+                    btn.classList.add('bg-card', 'border-border', 'text-foreground');
+                });
+                
+                activeButton.classList.add('bg-primary', 'text-primary-foreground', 'border-primary', 'shadow-neon', 'active-category');
+                activeButton.classList.remove('bg-card', 'border-border', 'text-foreground');
+            }
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    setActiveCategory(this);
+                    const selectedCategory = this.getAttribute('data-category');
+                    
+                    gameCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        card.style.display = (selectedCategory === 'todos' || cardCategory === selectedCategory) ? 'flex' : 'none';
+                    });
+                });
             });
         });
-    });
-});
-</script>
-
-</body></html>
+    </script>
+</body>
+</html>
